@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form  class="formgroup" method="post" enctype="multipart/form-data" runat='server'>
+    {% csrf_token %}
+
+    <div class="alert alert-warning alert-dismissible fade show" role="danger">
+        <strong>This will remove your blog !</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="danger" aria-label="Close"></button>
+      </div>
+
+      <strong>Are you sure ?</strong><br><br>
+    
+    <input  type="submit" class="btn btn-success" value="Delete">
+
+</form>
+
+{% endblock content %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container mt-2">
+
+<div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+    <div class="col-md-6 px-0">
+      <h2 class="display-4 fst-italic">Welcome to our Blog Page</h2>
+      <p class="lead my-3"> so ,keep scroling and entertain urself with different kind of blogs uh gonna find here ! </p>
+      {% comment %} <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continue reading...</a></p> {% endcomment %}
+    </div>
+  </div>
+
+<div class="row my-2" >
+{% for item in myposts %}
+
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">{{item.title}}</strong>
+          <h4 class="mb-0">{{item.profile}}</h4>
+          <div class="mb-1 text-muted">{{item.created_on}}</div>
+          <p class="card-text mb-auto">{{item.content | truncatechars:200}}</p>
+          <a href="/blogpost/{{item.post_id}}" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="/media/{{item.thumbnail}}" class="bd-placeholder-img" width="200" height="250"  role="img" aria-label="Placeholder: Thumbnail"/> 
+          
+
+        </div>
+      </div>
+    </div>
+{% if forloop.counter|divisibleby:2 %}
+      </div> <div class="row my-2" >
+      {% endif %}   
+  
+{% endfor %}
+</div>
+
+
+{% endblock content %}

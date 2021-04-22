@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>{{user.first_name}}</h3>
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Hey {{user.first_name}}!</strong> Welcome to your profile .
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<img src="{{pro.profile_picture.url}}">
+
+
+{% endblock content %}
+
+
