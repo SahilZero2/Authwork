@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic import CreateView , UpdateView, DeleteView
 from .models import  Post
 from django.urls import reverse_lazy
-
+from .forms import PostForm
 # Create your views here.
 def blog(request):
     myposts = Post.objects.all()
@@ -18,7 +18,8 @@ def blogpost(request,id):
 class AddPostView(CreateView):
     model = Post
     template_name = 'addpost.html'
-    fields = 'title slug content thumbnail profile author'.split()
+    form_class = PostForm
+    # fields = 'title slug content thumbnail profile author'.split()
 
 class UpdatePostView(UpdateView):
     model = Post

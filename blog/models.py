@@ -15,7 +15,7 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     thumbnail = models.ImageField(upload_to = 'profile_picture/')
 
-    profile = models.ForeignKey(Profile, on_delete=models.CASCADE,default=None)
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE,default=None,null=True)
 
     
     class Meta:

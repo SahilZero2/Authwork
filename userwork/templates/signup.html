@@ -5,7 +5,7 @@
     <strong>Welcome!</strong> to the AuthWork .
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
-<div style="width: 700px">
+<div >
 
 <form action="{% url 'createaccount' %}" method="post" class="formgroup" enctype="multipart/form-data" runat='server'>
     {% csrf_token %}
@@ -14,7 +14,7 @@
     <input type="text" name="username" placeholder="Enter user name" class="form-control" required>
     <input type="text" name="email" placeholder="Enter Email"  class="form-control" required>
     <input type="password" name="Password" placeholder="Enter Password" class="form-control" required>
-    <input type="date" name="dob" class="form-control" required >
+    <input type="date" name="dob" class="form-control" placeholder="Enter your date of birth here" onblur="(this.type='text')" required >
     <input type="file" name="profile_pic" accept="image/*" class="form-control" required><br>
     <input  type="submit" class="btn btn-success" value="Sign Up">
     

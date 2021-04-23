@@ -20,7 +20,7 @@
         <a href="/blogpost/{{item.post_id}}">
           <strong class="d-inline-block mb-2 text-primary">{{item.title}}</strong>
         </a>
-          <h4 class="mb-0">{{item.profile}}</h4>
+          <h4 class="mb-0">{{item.author}}</h4>
           <div class="mb-1 text-muted">{{item.created_on}}</div>
           <p class="card-text mb-auto">{{item.content | truncatechars:200}}</p>
           <a href="/blogpost/{{item.post_id}}" class="link">Continue reading</a>

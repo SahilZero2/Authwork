@@ -1,11 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
-
+<br>
+<div class="form-group">
 <form action="{% url 'addpost'  %}" class="formgroup" method="post" enctype="multipart/form-data" runat='server'>
     {% csrf_token %}
+
     {{ form.as_p }}
     <input  type="submit" class="btn btn-success" value="Post">
 
 </form>
+</div>
+
+<script>
+    var name = "{{ user.id }}";
+    document.getElementById("author").value=name;
+
+    var nam = "{{ user.id }}";
+    document.getElementById("profile").value=nam;
+</script>
 
 {% endblock content %}
