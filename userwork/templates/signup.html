@@ -5,8 +5,12 @@
     <strong>Welcome!</strong> to the AuthWork .
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
-<div >
 
+  <p style="color:red"> <i> <strong> {{ error }} </i> </strong></p>
+    
+     
+
+<!-- <h2>{{ error }}</h2> -->
 <form action="{% url 'createaccount' %}" method="post" class="formgroup" enctype="multipart/form-data" runat='server'>
     {% csrf_token %}
     <input type="text" name="name" placeholder="Enter Name" class="form-control" required >
